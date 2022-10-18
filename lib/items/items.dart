@@ -25,26 +25,35 @@ class ItemsList extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Column(
-            children: [
-              const SizedBox(height: 20),
-              ListTile(
-                isThreeLine: true,
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(artworkUrl100),
-                ),
-                title: Text(artistName),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(collectionPrice),
-                    Text(country),
-                    Text(description),
-                    Text(primaryGenreName),
-                  ],
-                ),
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Column(
+              children: [
+                const SizedBox(height: 20),
+                ListTile(
+                  isThreeLine: true,
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(artworkUrl100),
+                  ),
+                  title: Text(artistName),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(collectionPrice),
+                      const SizedBox(height: 10),
+                      Text(country),
+                      const SizedBox(height: 10),
+                      Text(
+                        description,
+                        textAlign: TextAlign.left,
+                      ),
+                      const SizedBox(height: 10),
+                      Text(primaryGenreName),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
